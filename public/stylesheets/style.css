@@ -1,8 +1,13 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
-a {
-  color: #00B7FF;
+.btn-group-vertical > a{
+  margin-bottom:10px;
+  border-radius:10px !important;
+}
+
+#home{
+  text-align: center;
 }

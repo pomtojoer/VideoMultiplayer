@@ -1,5 +1,25 @@
 extends layout
 
+block variables
+  - var title = "Home"
+  - hideSearchBar = false
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .jumbotron
+    h1 Hojichai Games
+    p.lead
+      | A collection of single player and multiplayer VR games to keep you entertained
+  include ./mixins/#card
+  .row(id='gameCards')
+    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf Crocodile', 'long ass info Osteolaemus tetraspis','#', 5,true)
+    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf Cdsrocodile', 'long ass info Osteolaemus tetraspis','#')
+    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
+    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
+    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
+
+
+//-   .row
+//-     .offset-sm-2.col-sm-8
+//-       .jumbotron.text-center.
+//-         Welcome to your new Express app! Please visit the
+//-         #[a(href="https://github.com/rdegges/okta-express-login-portal", title="okkta-express-login-portal on GitHub") GitHub page] to learn more.

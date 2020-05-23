@@ -1,7 +1,60 @@
+- var hideSearchBar = true
+block variables
+
 doctype html
-html
+html(lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='/favicon.ico')
+
+    title video-multiplayer: #{title}
+  
+    link(
+      rel="stylesheet",
+      href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/flatly/bootstrap.min.css",
+      integrity="sha384-mhpbKVUOPCSocLzx2ElRISIORFRwr1ZbO9bAlowgM5kO7hnpRBe+brVj8NNPUiFs",
+      crossorigin="anonymous"
+    )
+    link(rel="stylesheet", href="/stylesheets/style.css")
+
   body
-    block content
+    nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-primary
+      a.navbar-brand(href='/') Hojichai
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarCollapse.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a.nav-link(href='/') Home
+          li.nav-item
+            a.nav-link(href='/about') About
+          li.nav-item
+            a.nav-link(href='/support') Support
+        form.form-inline.mt-2.mt-md-0(hidden=hideSearchBar)
+          input.form-control.mr-sm-2(type='text', placeholder='Filter games...', aria-label='Search', id='SearchInput',onkeyup='filterFunc(SearchInput,gameCards)')
+
+
+    main.container(role='main')
+      block content
+
+    .footer
+      .footer-copyright.text-center.py-3
+        | &copy; 2020 Copyright:
+        a(href='mailto:placeholder@hotmail.com')  Pomt Chai
+    
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"
+    )
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js" integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY=" crossorigin="anonymous")
+    script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"
+      integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs="
+      crossorigin="anonymous"
+    )
+    script(src='/javascripts/scripts.js')
+
