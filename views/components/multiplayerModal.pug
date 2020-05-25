@@ -1,0 +1,31 @@
+extends ./../templates/modalTemplate
+
+block variables
+  - var modalId = "createOrJoinModal"
+  
+block content
+  ul.nav.nav-tabs
+    li.nav-item
+        a.nav-link.active(data-toggle='tab' href='#create-room') Create Room
+    li.nav-item
+        a.nav-link(data-toggle='tab' href='#join-room') Join Room
+  #tabContent.tab-content
+    #create-room.tab-pane.fade.active.show
+      form(method='post' action='/')
+        .form-group
+          label Screen Name
+          input.form-control(type='text' placeholder='Enter a screen name' name='screnNameInput' required='')
+          small#inputScreenNameHelp.form-text.text-muted This is the name that others in the room will see.
+          input.modal-game-id-input(type="hidden" name='gameID' value='')
+        button.btn.btn-primary.float-right(type='submit') Create
+
+    #join-room.tab-pane.fade
+      form(method='post' action='/')
+        .form-group
+          label(for='screenNameInput') Screen Name
+          input.form-control(type='text' placeholder='Enter screen name' name='screnNameInput' required='')  
+          small#inputScreenNameHelp.form-text.text-muted This is the name that others in the room will see.
+          label(for='roomIDInput') Room ID
+          input.form-control(type='text' placeholder='Enter room id' name='roomIDInput' required='')
+          input.modal-game-id-input(type="hidden" name='gameID' value='')
+        button.btn.btn-primary.float-right(type='submit') Join

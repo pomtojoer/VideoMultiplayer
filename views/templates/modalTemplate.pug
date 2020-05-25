@@ -1,0 +1,13 @@
+block variables
+
+.modal.fade(id=modalId,tabindex="-1",role="dialog", aria-labelledby=modalId aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				h5.modal-title(id='modal-title-holder')
+				button.close(type='button' data-dismiss='modal' aria-label='Close')
+					span(aria-hidden='true') &times;
+			.modal-body
+				block content
+			//- .modal-footer
+			//- 	block foot

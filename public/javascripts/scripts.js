@@ -17,3 +17,14 @@ function filterFunc(SearchInput, SearchLocation) {
       }
     console.log(cards);
 }
+
+
+$('.btn-multiplayer').on('click', function(event) {
+  var gameId = $(this).data("id");
+  var gameName = $(this).parent().parent().parent().children('#card-title-holder').text();
+  
+  $('#modal-title-holder').text( gameName );
+  $('.modal-game-id-input').val(gameId);
+
+  //prop("tagName");
+});

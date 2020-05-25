@@ -11,12 +11,26 @@ block content
       | A collection of single player and multiplayer VR games to keep you entertained
   include ./mixins/#card
   .row(id='gameCards')
-    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf Crocodile', 'long ass info Osteolaemus tetraspis','#', 5,true)
-    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf Cdsrocodile', 'long ass info Osteolaemus tetraspis','#')
-    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
-    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
-    +card('https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
-
+    //- ($idval, $icon, $alticon, $title, $info, $numberOfPlayers, $multiplayerAvailable=false)
+    +card('reactionGame',
+          'https://via.placeholder.com/150',
+          'Reaction Game Image',
+          'Reaction Game',
+          'Test your reactions by....',
+          6,
+          true)
+    +card('handPong',
+          'https://via.placeholder.com/150',
+          'Hand Pong Image',
+          'Hand Pong',
+          'POlaye djfhd',
+          2,
+          true)
+    +card('id3','https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#', 5,true)
+    +card('id4','https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
+    +card('id5','https://via.placeholder.com/150', 'croc-img', 'Dwarf sdCrocodile', 'long ass info Osteolaemus tetraspis','#')
+  
+  include ./components/multiplayerModal
 
 //-   .row
 //-     .offset-sm-2.col-sm-8

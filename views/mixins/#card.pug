@@ -1,17 +1,18 @@
 //- Initiate a card with all its arguments
-mixin card($icon, $alticon, $title, $info, $singlePlayerLink, $numberOfPlayers, $multiplayerAvailable=false, $multiplayerLink="#")
+mixin card($idval, $icon, $alticon, $title, $info, $numberOfPlayers, $multiplayerAvailable=false)
   // game card start
   .col-xs-12.col-sm-6.col-md-4.mb-3
     .card.h-100(id='game-card')
-      img.card-img-top(src=$icon alt=$alticon width="100%" height="180" data-toggle="modal" data-target="#detailsModal")
+      img.card-img-top(src=$icon alt=$alticon width="100%" height="180")
       .card-body
-        h5.card-title=$title
+        h5.card-title(id='card-title-holder')=$title
         p.card-text=$info
         p.card-text
           small.text-muted Max no. of Players: 
           small.text-muted=$numberOfPlayers
         center
           .btn-group-vertical
-            a.btn.btn-primary(href=$singlePlayerLink) Single Player
-            a.btn.btn-primary(hidden=!$multiplayerAvailable, href=$multiplayerLink) Multiplayer
-  // game card end
+            a.btn.btn-primary(href=$idval) Single Player
+            button.btn.btn-primary.btn-multiplayer(hidden=!$multiplayerAvailable, id='multiplayerButton', data-toggle='modal', data-target='#createOrJoinModal', data-id=$idval) Multiplayer
+
+            // game card end
