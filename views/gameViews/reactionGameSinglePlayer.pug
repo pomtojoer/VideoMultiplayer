@@ -1,4 +1,22 @@
-extend ../layout
+extends ../layout
+
+block variables
+  - var title = "Reaction Single Player Game"
+  - var onloadfcn = "setupPage()"
 
 block content
-    h2 reaction game single player
+  #filler
+  #loader
+  #displayDiv.animate-bottom(style='display:none;')
+    .btn-group-horizontal(role='group' aria-label='Game Controls')
+      button#startbutton.btn.btn-primary.game-button(type='button' onclick='toggleVideo()') Start
+      button#pausebutton.btn.btn-primary.game-button(type='button' onclick='toggleVideo()' disabled="") Pause
+      button#restartbutton.btn.btn-primary.game-button(type='button') Restart
+    .video-container
+      video#localVideo.videobox.canvasbox(autoplay='autoplay' style='display:none;')
+      canvas#canvas.border.canvasbox
+
+
+block scripts
+  script(src='https://cdn.jsdelivr.net/npm/handtrackjs/dist/handtrack.min.js')
+  script(src='/javascripts/track.js')
